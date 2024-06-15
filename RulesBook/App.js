@@ -3,6 +3,7 @@ import { StyleSheet, View, Button } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { usePreventScreenCapture } from 'expo-screen-capture';
 
 const Stack = createStackNavigator();
 
@@ -10,6 +11,8 @@ const pdf1Uri = 'https://css4.pub/2015/textbook/somatosensory.pdf';
 const pdf2Uri = 'https://css4.pub/2017/newsletter/drylab.pdf';
 
 export default function App() {
+  usePreventScreenCapture();
+
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -44,6 +47,7 @@ function PDFViewScreen({ route, navigation }) {
         source={{ uri }}
         style={styles.webview}
         javaScriptEnabled={true}
+        mixedContentMode="always"
       />
       <Button
         title="Back"
