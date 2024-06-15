@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { StyleSheet, View, Button } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { NavigationContainer } from '@react-navigation/native';
@@ -69,6 +68,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   buttonContainer: {
+    gap: "80px",
     flexDirection: 'column',
     justifyContent: 'center',
     marginBottom: 20,
